@@ -27,12 +27,11 @@
     <string name="ini">Catálogo</string>
     <string name="map">Listado de Bibliotecas</string>
     <string name="apli">Aplicaciones</string>
-    <string name="pag">Solicitudes y Reservas</string>
-    <string name="materialBibli">Material Bibliográfico</string>
+    <string name="pagBasesdeDatos">http://aplicacionesbiblioteca.udea.edu.co/bdm.html</string>
+    <string name="pagBibliotecaDigital">http://bibliotecadigital.udea.edu.co/</string>
+    <string name="pagInduccionVirtual">https://aplicacionesbiblioteca.udea.edu.co/induccionvirtual/</string>
     <string name="pagMaterialBiblio">http://cirene.udea.edu.co/seleccion/#/</string>
-    <string name="turnos">Equipos de Cómputo</string>
     <string name="pagTurnos">http://biblioteca.udea.edu.co/turnos/#/</string>
-    <string name="suministros">Suministro de Documentos</string>
     <string name="pagSuministros">http://cirene.udea.edu.co/suministros/#/</string>
     <string name="help_1">Ayudas y sugerencias</string>
     <string name="miCuenta">Mi cuenta</string>
@@ -415,6 +414,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string-array name="listaApli">
+        <item>Bases de Datos</item>
+        <item>Biblioteca Digital</item>
+        <item>Inducción Virtual</item>
         <item>Registro de solicitudes de material Bibliográfico</item>
         <item>Reserva de turnos para equipos de cómputo</item>
         <item>Suministro de documentos</item>

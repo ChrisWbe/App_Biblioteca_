@@ -45,27 +45,34 @@ public class ListaAplicaciones extends Fragment {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent;
+                Intent intent = new Intent().setClass(getActivity(), Aplicaciones.class);
                 switch(position){
                     case 0:
-                        intent = new Intent().setClass(getActivity(), Aplicaciones.class);
-                        intent.putExtra("pagWeb", getString(R.string.pagMaterialBiblio));
-                        startActivity(intent);
+                        intent.putExtra("pagWeb", getString(R.string.pagBasesdeDatos));
                         break;
 
                     case 1:
-                        intent = new Intent().setClass(getActivity(), Aplicaciones.class);
-                        intent.putExtra("pagWeb", getString(R.string.pagTurnos));
-                        startActivity(intent);
+                        intent.putExtra("pagWeb", getString(R.string.pagBibliotecaDigital));
                         break;
 
                     case 2:
-                        intent = new Intent().setClass(getActivity(), Aplicaciones.class);
+                        intent.putExtra("pagWeb", getString(R.string.pagInduccionVirtual));
+                        break;
+
+                    case 3:
+                        intent.putExtra("pagWeb", getString(R.string.pagMaterialBiblio));
+                        break;
+
+                    case 4:
+                        intent.putExtra("pagWeb", getString(R.string.pagTurnos));
+                        break;
+
+                    case 5:
                         intent.putExtra("pagWeb", getString(R.string.pagSuministros));
-                        startActivity(intent);
                         break;
 
                 }
+                startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.left_in, R.anim.left_out);
             }
         });
