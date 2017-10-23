@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/item_Inicio"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="@string/ini" />
+        <item
+            android:id="@+id/item_mapas"
+            android:icon="@android:drawable/ic_dialog_map"
+            android:title="@string/map" />
+        <item
+            android:id="@+id/item_apli"
+            android:icon="@android:drawable/ic_input_get"
+            android:title="@string/apli"/>
+
+        <item
+            android:id="@+id/item_login"
+            android:title="@string/miCuenta"
+            android:icon="@mipmap/ic_person">
+        </item>
+
+        <item
+            android:id="@+id/item_help"
+            android:title="@string/help_1"
+            android:icon="@android:drawable/ic_menu_help"/>
+
+    </group>
+
+
+
+</menu>

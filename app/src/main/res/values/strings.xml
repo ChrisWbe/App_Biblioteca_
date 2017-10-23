@@ -1,0 +1,423 @@
+<resources>
+    <string name="app_name">Sistema de Bibliotecas</string>
+    <string name="abierto">Abierto</string>
+    <string name="cerrado">Cerrado</string>
+    <string name="opcion">Selecciona una Biblioteca</string>
+    <string name="dir"><b><i>Dirección: </i></b></string>
+    <string name="tel"><b><i>Teléfono: </i></b></string>
+    <string name="ho_ate"><b><i>Horario de atención al público </i></b></string>
+    <string name="lu_vi"><b><i>Lunes a Viernes: </i></b></string>
+    <string name="sab"><b><i>Sábados: </i></b></string>
+    <string name="dom"><b><i>Domingos: </i></b></string>
+    <string name="d_fest"><b><i>Los días festivos no hay servicio.</i></b></string>
+
+    <string name="llevame">Llévame</string>
+    <string name="usuario">Usuario</string>
+    <string name="pass">Contraseña</string>
+    <string name="login">Entrar</string>
+    <string name="sesion"> Cerrar Sesión</string>
+    <string name="iniSesion">Iniciar Sesión</string>
+    <string name="errorVacio">Este campo no puede estár vacío</string>
+    <string name="conecction">Necesaria conexión a Internet</string>
+    <string name="myBooks">Mis prestamos</string>
+    <string name="myInfo">Info Usuario</string>
+    <string name="centifi">Certificados</string>
+
+    <!--para el menu del NAvigationDrawer-->
+    <string name="ini">Catálogo</string>
+    <string name="map">Listado de Bibliotecas</string>
+    <string name="apli">Aplicaciones</string>
+    <string name="pag">Solicitudes y Reservas</string>
+    <string name="materialBibli">Material Bibliográfico</string>
+    <string name="pagMaterialBiblio">http://cirene.udea.edu.co/seleccion/#/</string>
+    <string name="turnos">Equipos de Cómputo</string>
+    <string name="pagTurnos">http://biblioteca.udea.edu.co/turnos/#/</string>
+    <string name="suministros">Suministro de Documentos</string>
+    <string name="pagSuministros">http://cirene.udea.edu.co/suministros/#/</string>
+    <string name="help_1">Ayudas y sugerencias</string>
+    <string name="miCuenta">Mi cuenta</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <!-- Carlos Gavíria Díaz -->
+    <string name="textTiCGD">Biblioteca Carlos Gaviria Díaz Universidad de Antioquia</string>
+    <string name="LatCGD">6.266968266636446</string>
+    <string name="LonCGD">-75.5691146850586</string>
+    <string name="TitleCGD">Carlos Gavíria Díaz</string>
+    <string name="TextoCGD">Esta Biblioteca contiene colecciones y servicios especializados en todas las áreas del conocimiento. En la Biblioteca Carlos Gaviria Díaz se concentran y coordinan todas las actividades administrativas del Sistema de Bibliotecas y está ubicada en la ciudadela universitaria (Bloque 8) desde 1968. El edificio consta de 5 pisos en los cuales se encuentran diversas colecciones y servicios, que están a disposición de la comunidad académica y los visitantes.</string>
+    <string name="dirCGD">Calle 67 # 53 - 108 - Bloque 8 (Ciudad Universitaria, Medellín)</string>
+    <string name="telCGD"> +57(4) 2195151 || +57(4) 2195140</string>
+    <string name="lvCGD">De 7:00 a.m. a 8:45 p.m.</string>
+    <string name="sabCGD">De 8:00 a. m. a 3:45 p.m.</string>
+    <string name="domCGD">De 9:00 a. m. a 12:45 p.m.</string>
+
+    <!-- Medicina -->
+    <string name="textTiMedica">Biblioteca Médica Universidad de Antioquia</string>
+    <string name="LatMedica">6.262771560933662</string>
+    <string name="LonMedica">-75.56567365449155</string>
+    <string name="TitleMedica">Médica</string>
+    <string name="TextoMedica">Esta Biblioteca contiene colecciones y servicios especializados en las áreas de la salud y la medicina, con enfoque clínico.</string>
+    <string name="dirMedica">Calle 51D # 62 - 29, piso 4 Medellín | Colombia</string>
+    <string name="telMedica"> +57(4) 2196910 || +57(4) 2196912 || +57(4) 2196914</string>
+    <string name="lvMedica">De 7:00 a.m. a 7:00 p.m.</string>
+    <string name="sabMedica">De 8:00 a. m. a 1:00 p.m.</string>
+    <string name="domMedica">no hay servicio.</string>
+
+    <!-- Salud Pública -->
+    <string name="textTiSaP">Biblioteca de Salud Pública Universidad de Antioquia</string>
+    <string name="LatSaP">6.260979870306369</string>
+    <string name="LonSaP">-75.56756192832836</string>
+    <string name="TitleSaP">Salud Pública</string>
+    <string name="TextoSaP">En esta Biblioteca se encuentra la Colección de Seguridad Social.</string>
+    <string name="dirSaP">Calle 62 # 52 - 59 - Piso 1 - 113 Medellín | Colombia</string>
+    <string name="telSaP">+57(4) 2196870</string>
+    <string name="lvSaP">De 7:00 a.m. a 6:00 p.m.</string>
+    <string name="sabSap">De 8:00 a. m. a 1:00 p.m.</string>
+    <string name="domSaP">no hay servicio.</string>
+
+    <!-- Odontología -->
+    <string name="textTiOdo">Biblioteca de Odontología Universidad de Antioquia</string>
+    <string name="LatOdo">6.261875716388482</string>
+    <string name="LonOdo">-75.56747609894956</string>
+    <string name="TitleOdo">Odontología</string>
+    <string name="TextoOdo">Esta Biblioteca contiene colecciones y servicios especializados en las áreas de la salud oral general y especializada.</string>
+    <string name="dirOdo">Calle 64 # 52 - 59 - Piso 2 Medellín | Colombia</string>
+    <string name="telOdo">+57(4) 2196750</string>
+    <string name="lvOdo"> De 6:00 a.m. a 6:00 p.m.</string>
+    <string name="sabOdo">no hay servicio.</string>
+    <string name="domOdo">no hay servicio.</string>
+
+    <!-- Enfermería -->
+    <string name="textTiEn">Biblioteca de Enfermería Universidad de Antioquia</string>
+    <string name="LatEn">6.261918374385541</string>
+    <string name="LonEn">-75.56790525108227</string>
+    <string name="TitleEn">Enfermería</string>
+    <string name="TextoEn">Esta Biblioteca contiene colecciones y servicios especializados en las áreas del cuidado de la salud del paciente y de sí mismo.</string>
+    <string name="dirEn">Calle 64 # 53 - 09 Medellín | Colombia</string>
+    <string name="telEn">+57(4) 2196341</string>
+    <string name="lvEn"> De 7:00 a.m. a 6:00 p.m.</string>
+    <string name="sabEn"> De 8:00 a.m. a 1:00 p.m.</string>
+    <string name="domEn">no hay servicio.</string>
+
+    <!-- Robledo -->
+    <string name="textTiRo">Biblioteca de Ciudadela Universitaria Robledo Universidad de Antioquia</string>
+    <string name="LatRo">6.272449904481402</string>
+    <string name="LonRo">-75.58769702911377</string>
+    <string name="TitleRo">Ciudadela Universitaria Robledo</string>
+    <string name="TextoRo">Esta Biblioteca contiene colecciones y servicios especializados en medicina veterinaria, producción animal, zootecnia, nutrición y dietética, educación física, deporte y entrenamiento deportivo. Las Colecciones especializadas de educación física, deporte y entrenamiento deportivo están ubicadas en el Bloque 45 - 108 de esta misma sede. Y su horario de servicio es de lunes a viernes, de 6:00 a.m. a 7:00 p.m.</string>
+    <string name="dirRo">Carrera 75 # 65 - 87 - Bloque 46 -100 Medellín | Colombia</string>
+    <string name="telRo">+57(4) 2199151 || +57(4) 2199152</string>
+    <string name="lvRo">De 7:00 a.m. a 7:00 p.m.</string>
+    <string name="sabRo"> De 8:00 a.m. a 2:00 p.m.</string>
+    <string name="domRo">no hay servicio.</string>
+
+    <!-- Bibliotecología -->
+    <string name="textTiBBT">Biblioteca de Bibliotecología Universidad de Antioquia</string>
+    <string name="LatBBT">6.266968266636446</string>
+    <string name="LonBBT">-75.5691146850586</string>
+    <string name="TitleBBT">Bibliotecología</string>
+    <string name="TextoBBT">Esta Biblioteca contiene colecciones y servicios especializados en áreas de las ciencias de la información.</string>
+    <string name="dirBBT">Calle 67 # 53 -108 - Bloque 12 - Piso 3 Medellín | Colombia</string>
+    <string name="telBBT">+57(4) 2195940 || +57(4) 2195959 || +57(4) 2195941</string>
+    <string name="lvBBT">De 7:00 a.m. a 7:00 p.m.</string>
+    <string name="sabBBT"> De 8:00 a.m. a 2:00 p.m.</string>
+    <string name="domBBT">no hay servicio.</string>
+
+
+    <!-- Bachillerato Nocturno -->
+    <string name="textTiBN">Biblioteca del Bachillerato Nocturno Universidad de Antioquia</string>
+    <string name="LatBN">6.245459686324733</string>
+    <string name="LonBN">-75.56318846591694</string>
+    <string name="TitleBN">Bachillerato Nocturno</string>
+    <string name="TextoBN">Esta Biblioteca contiene colecciones y servicios especializados en programas académicos de Bachillerato.</string>
+    <string name="dirBN">Cr. 42A # 48 - 23 Medellín | Colombia</string>
+    <string name="telBN">+57(4) 2399654</string>
+    <string name="lvBN">Lunes de 3:00 a 9:00 p.m.
+                        Martes de 8:00 a.m a 1:00 p.m. y 3:00 a 9:00 p.m.
+                        Miércoles de 10:00 a.m. a 1:00 p.m. y 3:00 a 9:00 p.m
+                        Jueves de 8:00 a 12:00 m. y de 3:00 a 9:00 p.m.
+                        Viernes de 3:00 a 9:00 p.m.</string>
+    <string name="sabBN"> De 2:00 p.m. a 6:00 p.m.</string>
+    <string name="domBN">no hay servicio.</string>
+
+    <!-- CENDOI -->
+    <string name="textTiCEN">CENDOI | Centro de Documentación de Ingeniería Universidad de Antioquia</string>
+    <string name="LatCEN">6.2683952044019025</string>
+    <string name="LonCEN">-75.56804716587067</string>
+    <string name="TitleCEN">CENDOI</string>
+    <string name="TextoCEN">Los Centros de Documentación son Unidades de Información que desarrollan colecciones y servicios con énfasis especializados.</string>
+    <string name="dirCEN">Calle 67 # 53 - 108 bloque 20, oficina 146 Medellín | Colombia</string>
+    <string name="telCEN">+57(4) 2195527</string>
+    <string name="lvCEN">De 6:00 a.m. a 6:45 p.m.</string>
+    <string name="sabCEN">De 9:00 a.m. a 6:00 p.m.</string>
+    <string name="domCEN">no hay servicio.</string>
+
+
+    <!--Centro de DOcumentacion de Artes-->
+    <string name="textTiArt">Centro de Documentación de Artes Universidad de Antioquia</string>
+    <string name="LatArt">6.266954935734895</string>
+    <string name="LonArt">-75.56911200284958</string>
+    <string name="TitleArt">Artes</string>
+    <string name="TextoArt">Los Centros de Documentación son Unidades de Información que desarrollan colecciones y servicios con énfasis especializados.</string>
+    <string name="dirArt">Calle 67 # 53 - 108 bloque 25, oficina 105 Medellín | Colombia</string>
+    <string name="telArt">+57(4) 2195885</string>
+    <string name="lvArt"> De 8:00 a.m. a 5:45 p.m.</string>
+    <string name="sabArt">no hay servicio.</string>
+    <string name="domArt">no hay servicio.</string>
+
+    <!--Centro de DOcumentacion de Economía-->
+    <string name="textTiEco">Centro de Documentación de Economía Universidad de Antioquia</string>
+    <string name="LatEco">6.266954935734895</string>
+    <string name="LonEco">-75.56911200284958</string>
+    <string name="TitleEco">Economía</string>
+    <string name="TextoEco">Los Centros de Documentación son Unidades de Información que desarrollan colecciones y servicios con énfasis especializados.</string>
+    <string name="dirEco">Calle 67 # 53 - 108 bloque 13, oficina 118 Medellín | Colombia</string>
+    <string name="telEco">+57(4) 2195845</string>
+    <string name="lvEco">De 7:30 a.m. a 6:30 p.m.</string>
+    <string name="sabEco">no hay servicio.</string>
+    <string name="domEco">no hay servicio.</string>
+
+    <!--Centro de DOcumentacion de Educación-->
+    <string name="textTiEdu">Centro de Documentación de Educación Universidad de Antioquia</string>
+    <string name="LatEdu">6.266954935734895</string>
+    <string name="LonEdu">-75.56911200284958</string>
+    <string name="TitleEdu">Educación</string>
+    <string name="TextoEdu">Los Centros de Documentación son Unidades de Información que desarrollan colecciones y servicios con énfasis especializados.</string>
+    <string name="dirEdu">Calle 67 # 53 - 108 bloque 13, oficina 118 Medellín | Colombia</string>
+    <string name="telEdu">+57(4) 2195707</string>
+    <string name="lvEdu">Lunes y jueves de 8:00 a.m. – 6:00 pm.
+                        Martes, miércoles y viernes de 8:00 a.m. -11:45 a.m. y 2:00 p.m. - 5:45 p.m.</string>
+    <string name="sabEdu">no hay servicio.</string>
+    <string name="domEdu">no hay servicio.</string>
+
+    <!--Centro de DOcumentacion de Idiomas-->
+    <string name="textTiIdi">Centro de Documentación de Idiomas Universidad de Antioquia</string>
+    <string name="LatIdi">6.266954935734895</string>
+    <string name="LonIdi">-75.56911200284958</string>
+    <string name="TitleIdi">Idiomas</string>
+    <string name="TextoIdi">Los Centros de Documentación son Unidades de Información que desarrollan colecciones y servicios con énfasis especializados.</string>
+    <string name="dirIdi">Calle 67 # 53 - 108 bloque 11, oficina 103 Medellín | Colombia</string>
+    <string name="telIdi">+57(4) 2195934</string>
+    <string name="lvIdi">De 8:00 a.m. a 2:00 p.m.</string>
+    <string name="sabIdi">no hay servicio.</string>
+    <string name="domIdi">no hay servicio.</string>
+
+    <!--Centro de DOcumentacion de la emisora cultural-->
+    <string name="textTiEC">Centro de Documentación de la Emisora Cultural Universidad de Antioquia</string>
+    <string name="LatEC">6.246278297904832</string>
+    <string name="LonEC">-75.56335866451263</string>
+    <string name="TitleEC">Emisora Cultural</string>
+    <string name="TextoEC">Los Centros de Documentación son Unidades de Información que desarrollan colecciones y servicios con énfasis especializados.</string>
+    <string name="dirEC">Carrera 44 # 48 - 72, 2° y 3er piso. Edificio San Ignacio Medellín | Colombia</string>
+    <string name="telEC">+57(4) 2199840</string>
+    <string name="lvEC">De 8:00 a.m. a 12:00 m. y de 2:00 a 6:00 p.m.</string>
+    <string name="sabEC">no hay servicio.</string>
+    <string name="domEC">no hay servicio.</string>
+
+
+    <!--Centro de DOcumentacion de Estudios Politicos-->
+    <string name="textTiEP">Centro de Documentación del Instituto de Estudios Políticos Universidad de Antioquia</string>
+    <string name="LatEP">6.266954935734895</string>
+    <string name="LonEP">-75.56911200284958</string>
+    <string name="TitleEP"> Instituto de Estudios Políticos </string>
+    <string name="TextoEP">Los Centros de Documentación son Unidades de Información que desarrollan colecciones y servicios con énfasis especializados.</string>
+    <string name="dirEP">Calle 67 # 53 - 108 bloque 14, oficina 206 Medellín | Colombia</string>
+    <string name="telEP">+57(4) 2195690</string>
+    <string name="lvEP">De 8:00 a.m. a 1:00 p.m. y de 2:00 a 4:00 p.m.</string>
+    <string name="sabEP">no hay servicio.</string>
+    <string name="domEP">no hay servicio.</string>
+
+
+    <!--Centro de DOcumentacion de Javier Londoño-->
+    <string name="textTiJL">Centro de Documentación Javiera Londoño Universidad de Antioquia</string>
+    <string name="LatJL">6.245978607226263</string>
+    <string name="LonJL">-75.56286245584488</string>
+    <string name="TitleJL"> Javier Londoño</string>
+    <string name="TextoJL">Los Centros de Documentación son Unidades de Información que desarrollan colecciones y servicios con énfasis especializados.</string>
+    <string name="dirJL">Calle 49 # 42A - 39 Medellín | Colombia</string>
+    <string name="telJL">+57(4) 2199840</string>
+    <string name="lvJL">Lunes a jueves de 8:00 a.m. a 12:00 m. y de 2:00 p.m. a 6:00 p.m.
+                    Viernes: de 2:00 p.m. a 6:00 p.m. </string>
+    <string name="sabJL">De 8:00 a.m. a 1:00 p.m. y de 2:00 a 4:00 p.m.</string>
+    <string name="domJL">no hay servicio.</string>
+
+    <!--Centro de DOcumentacion de CIDUA-->
+    <string name="textTiCIDUA">CIDUA | Centro de Documentación de Química Farmacéutica Universidad de Antioquia</string>
+    <string name="LatCIDUA">6.266954935734895</string>
+    <string name="LonCIDUA">-75.56911200284958</string>
+    <string name="TitleCIDUA">CIDUA</string>
+    <string name="TextoCIDUA">Los Centros de Documentación son Unidades de Información que desarrollan colecciones y servicios con énfasis especializados.</string>
+    <string name="dirCIDUA">Calle 67 # 53 - 108 bloque 2, oficina 123 Medellín | Colombia</string>
+    <string name="telCIDUA">+57(4) 2195455</string>
+    <string name="lvCIDUA"> De 8:30 a.m. a 6:00 p.m.</string>
+    <string name="sabCIDUA">no hay servicio.</string>
+    <string name="domCIDUA">no hay servicio.</string>
+
+
+    <!--Centro de DOcumentacion de CIIC-->
+    <string name="textTiCIIC">CIIC | Centro Internacional de Idiomas y Culturas Universidad de Antioquia</string>
+    <string name="LatCIIC">6.250637123801264</string>
+    <string name="LonCIIC">-75.56943252682686</string>
+    <string name="TitleCIIC">CIIC</string>
+    <string name="TextoCIIC">Los Centros de Documentación son Unidades de Información que desarrollan colecciones y servicios con énfasis especializados.</string>
+    <string name="dirCIIC">Carrera 52 # 50 - 13, Centro. Edificio Suramericana, piso 2 Medellín | Colombia</string>
+    <string name="telCIIC"> +57(4) 5121920</string>
+    <string name="lvCIIC">De 6:00 a.m. a 8:00 p.m.</string>
+    <string name="sabCIIC">De 7:00 a.m. a 4:00 p.m. y de 2:00 a 4:00 p.m.</string>
+    <string name="domCIIC">no hay servicio.</string>
+
+
+    <!--Centro de DOcumentacion de CISH -->
+    <string name="textTiCISH">CISH | Centro de Documentación de Ciencias Sociales y Humanas Universidad de Antioquia</string>
+    <string name="LatCISH">6.266968266636446</string>
+    <string name="LonCISH">-75.5691146850586</string>
+    <string name="TitleCISH">CISH</string>
+    <string name="TextoCISH">Los Centros de Documentación son Unidades de Información que desarrollan colecciones y servicios con énfasis especializados.</string>
+    <string name="dirCISH">Calle 67 # 53 - 108 bloque 9, oficina 305 Medellín | Colombia</string>
+    <string name="telCISH"> +57(4) 2195777</string>
+    <string name="lvCISH">De 8:00 a 12:00 m. y de 2:00 p.m. a 6:00 p.m.</string>
+    <string name="sabCISH">no hay servicio.</string>
+    <string name="domCISH">no hay servicio.</string>
+
+
+    <!--Centro de DOcumentacion de Musicas Regionales -->
+    <string name="textTiMR">Fondo de Investigación y Documentación de Músicas Regionales Universidad de Antioquia</string>
+    <string name="LatMR">6.266968266636446</string>
+    <string name="LonMR">-75.5691146850586</string>
+    <string name="TitleMR">Fondo de Investigación y Documentación de Músicas Regionales</string>
+    <string name="TextoMR">Los Centros de Documentación son Unidades de Información que desarrollan colecciones y servicios con énfasis especializados.</string>
+    <string name="dirMR">Calle 67 # 53 - 108 bloque 24, oficina 311 Medellín | Colombia</string>
+    <string name="telMR"> +57(4) 2195985</string>
+    <string name="lvMR">Lunes: de 8:00 a.m. a 12:00 m.
+                        Miércoles: de 2:00 a 6:00 p.m.
+                        Viernes: de 8:00 a.m. a 12:00 m. y de 2:00 p.m. a 6:00 p.m.</string>
+    <string name="sabMR">no hay servicio.</string>
+    <string name="domMR">no hay servicio.</string>
+
+
+    <!--Centro de DOcumentacion de Estudios Regionales-->
+    <string name="textTiINER">INER | Centro de Documentación del Instituto de Estudios Regionales Universidad de Antioquia</string>
+    <string name="LatINER">6.266968266636446</string>
+    <string name="LonINER">-75.5691146850586</string>
+    <string name="TitleINER">INER</string>
+    <string name="TextoINER">Los Centros de Documentación son Unidades de Información que desarrollan colecciones y servicios con énfasis especializados.</string>
+    <string name="dirINER">Calle 67 # 53 - 108 bloque 9, oficina 243 Medellín | Colombia</string>
+    <string name="telINER">+57(4) 2195698 || +57(4) 2195694</string>
+    <string name="lvINER">De 8:00 a.m. a 12:00 m.</string>
+    <string name="sabINER">no hay servicio.</string>
+    <string name="domINER">no hay servicio.</string>
+
+
+    <!--Caucasia-->
+    <string name="textTiCaucasia">Biblioteca Universidad de Antioquia ( Bajo Cauca - Caucasia )</string>
+    <string name="LatCaucasia">7.990357812346423</string>
+    <string name="LonCaucasia">-75.20042762160301</string>
+    <string name="TitleCaucasia">Bajo Cauca - Caucasia</string>
+    <string name="TextoCaucasia">Esta Biblioteca contiene colecciones y servicios especializados en las áreas de administración, derecho educación física, educación, informática, ingeniería de sistemas, psicología y zootecnia. Y bibliografía básica actualizada en matemáticas, biología, física, química y español.</string>
+    <string name="dirCaucasia">Calle 22 # 20 - 84 - Barrio Santa Elena. Caucasia | Colombia</string>
+    <string name="telCaucasia">+57(4) 8395350 ext 2809</string>
+    <string name="lvCaucasia">Lunes a jueves: De 7:00 a.m. a 6:00 p.m.
+                            Viernes: De 7:00 a.m. a 7:00 p.m.</string>
+    <string name="sabCaucasia">De 7:00 a.m. a 6:00 p.m.</string>
+    <string name="domCaucasia">De 8:00 a.m. a 2:00 p.m.</string>
+
+
+    <!--Magdalena Medio-->
+    <string name="textTiMagdalena">Biblioteca Universidad de Antioquia ( Magdalena Medio - Puerto Berrío )</string>
+    <string name="LatMagdalena">6.491339293248228</string>
+    <string name="LonMagdalena">-74.4091384112835</string>
+    <string name="TitleMagdalena">Magdalena Medio - Puerto Berrío</string>
+    <string name="TextoMagdalena">Esta Biblioteca contiene colecciones y servicios especializados en las áreas de acuicultura, administración, ciencias sociales, farmacéutica, ingeniería agropecuaria y psicología.</string>
+    <string name="dirMagdalena"> Barrio El Cacique, saliendo hacia Medellín. Puerto Berrío | Colombia</string>
+    <string name="telMagdalena">+57(4) 8333522</string>
+    <string name="lvMagdalena">Lunes a jueves: De 8:00 a.m. a 12:00 m. y de 2:00 p.m. a 6:00 p.m.
+                            Viernes: De 8:00 a.m. a 12:00 m. y de 2:00 p.m. a 9:00 p.m.</string>
+    <string name="sabMagdalena">De 8:00 a.m. a 6:00 p.m.</string>
+    <string name="domMagdalena">De 8:00 a.m. a 6:00 p.m.</string>
+
+
+    <!--Yarumal-->
+    <string name="textTiYarumal">Biblioteca Universidad de Antioquia ( Norte - Yarumal )</string>
+    <string name="LatYarumal">6.962492437875901</string>
+    <string name="LonYarumal">-75.41828066110611</string>
+    <string name="TitleYarumal">Norte - Yarumal</string>
+    <string name="TextoYarumal">Esta Biblioteca contiene colecciones y servicios especializados en las áreas de regencia de farmacia, trabajo social, zootecnia, matemáticas, biología, física, química, administración en salud, ingeniería en telecomunicaciones, psicología y tecnología de alimentos.</string>
+    <string name="dirYarumal">Carrera 21, entre calles 19 y 21 Yarumal | Colombia</string>
+    <string name="telYarumal"> +57(4) 2192863 Ext. 2863</string>
+    <string name="lvYarumal"> De 8:00 a.m. a 1:00 pm. y de 2:00 p.m. a 7:00 p.m.</string>
+    <string name="sabYarumal">De 8:00 a.m. a 1:00 pm. y de 2:00 p.m. a 7:00 p.m.</string>
+    <string name="domYarumal">De 8:00 a.m. a 12:00 m.</string>
+
+
+    <!--Santa Fé de Antioquia-->
+    <string name="textTiSdA">Biblioteca Universidad de Antioquia ( Occidente - Santa Fe de Antioquia )</string>
+    <string name="LatSdA">6.555013613705837</string>
+    <string name="LonSdA">-75.82647264003754</string>
+    <string name="TitleSdA">Occidente - Santa Fe de Antioquia </string>
+    <string name="TextoSdA">Colecciones y servicios especializados en las áreas de anatomía, bioestadística, biología, biopsicología, estadística, farmacología, literatura, microbiología, neuroanatomía, psicoanálisis, psicopatología, química farmacéutica y química.</string>
+    <string name="dirSdA">Calle 9 # 7 - 36. Oficina 104 || Santa Fe de Antioquia | Colombia</string>
+    <string name="telSdA">+57(4) 8531743 Ext. 2843</string>
+    <string name="lvSdA">Lunes a jueves: De 8:00 a.m. a 6:00 p.m.
+                        Viernes: De 8:00 a.m. a 9:00 p.m.</string>
+    <string name="sabSdA">De 8:00 a.m. a 6:00 pm.</string>
+    <string name="domSdA">De 8:00 a.m. a 4:00 p.m.</string>
+
+
+    <!-- Carmen de Viboral -->
+    <string name="textTiCV">Biblioteca Universidad de Antioquia ( Oriente - Carmen de Viboral )</string>
+    <string name="LatCV">6.105607631555145</string>
+    <string name="LonCV">-75.38758277893066</string>
+    <string name="TitleCV">Oriente - Carmen de Viboral</string>
+    <string name="TextoCV">Esta Biblioteca contiene colecciones y servicios especializados en las áreas de Administración, Administración en Salud, Alimentos, Contaduría, Derecho, Filosofía, Ingeniería de Sistemas, Psicología, Regencia de Farmacia, Saneamiento Ambiental, Trabajo Social, Microbiología y Bioanálisis. Y cobertura bibliográfica amplia de las materias básicas: Matemáticas, Biología, Física, Química y Español.</string>
+    <string name="dirCV">Km 6 vía Rionegro - La Ceja || Carmen de Viboral | Colombia</string>
+    <string name="telCV">+57(4) 2198332 Ext. 2910</string>
+    <string name="lvCV">De 8:00 a.m. a 6:00 p.m.</string>
+    <string name="sabCV">De 8:00 a.m. a 12:00 m. y de 1:00 p.m. a 4:00 p.m.</string>
+    <string name="domCV">De 8:00 a.m. a 2:00 p.m.</string>
+
+
+    <!-- Sonson -->
+    <string name="textTiSonson">Biblioteca Universidad de Antioquia ( Oriente - Sonsón )</string>
+    <string name="LatSonson">5.7168309131904005</string>
+    <string name="LonSonson">-75.27678608894348</string>
+    <string name="TitleSonson">Oriente - Sonsón</string>
+    <string name="TextoSonson">Esta Biblioteca contiene colecciones y ofrece servicios especializados en las áreas de Tecnología en Ecología y Turismo, Ingeniería Industrial, Licenciatura en Educación Especial y Derecho.</string>
+    <string name="dirSonson"> La Pinera, vereda Río Arriba || Sonsón | Colombia</string>
+    <string name="telSonson">+57(4) 8693101 || +57(4) 8691432</string>
+    <string name="lvSonson">Martes a viernes: De 8:00 a.m. a 12:00 m. y 1:00 p.m. a 5:00 p.m.</string>
+    <string name="sabSonson">De 8:00 a.m. a 12:00 m. y 1:00 p.m. a 5:00 p.m.</string>
+    <string name="domSonson">no hay servicio.</string>
+
+    <!-- Andes -->
+    <string name="textTiAnd">Biblioteca Universidad de Antioquia ( Suroeste - Andes )</string>
+    <string name="LatAnd">5.688450528782704</string>
+    <string name="LonAnd">-75.88001489639282</string>
+    <string name="TitleAnd">Suroeste - Andes</string>
+    <string name="TextoAnd">Esta Biblioteca contiene colecciones y servicios especializados en las áreas de administración, agropecuaria, educación, informática, ingeniería de sistemas y psicología. Y cobertura bibliográfica amplia de las materias básicas: matemáticas, biología, física, química y español.</string>
+    <string name="dirAnd">Seccional universitaria del Suroeste. Salida a Medellín - Km. 4, frente a La Granja || Andes | Colombia</string>
+    <string name="telAnd">+57(4) 8417855 Ext. 2823</string>
+    <string name="lvAnd"> De 8:00 a.m. a 5:30 p.m.</string>
+    <string name="sabAnd"> De 8:00 a.m. a 5:30 p.m.</string>
+    <string name="domAnd"> De 8:00 a.m. a 1:30 p.m.</string>
+
+    <!-- Turbo -->
+    <string name="textTiTurbo">Biblioteca Universidad de Antioquia ( Urabá - Turbo )</string>
+    <string name="LatTurbo">8.096187041997956</string>
+    <string name="LonTurbo">-76.72124147415161</string>
+    <string name="TitleTurbo">(Urabá-Turbo)</string>
+    <string name="TextoTurbo">Esta Biblioteca contiene colecciones y servicios especializados en las áreas de administración de empresas, administración en salud, anatomía, biología, ciencias sociales, derecho, ecología y turismo, educación física, farmacología, física, neuroanatomía, psicología, química, tecnología de alimentos, trabajo social, información sobre la región y una colección de textos y documentos sobre ecología de zonas costeras, única en el país.</string>
+    <string name="dirTurbo">Calle 104, entre Carreras 18 A y 19. Barrio Jesús Mora || Turbo | Colombia</string>
+    <string name="telTurbo">+57(4) 8537431</string>
+    <string name="lvTurbo">De 8:00 a.m. a 7:00 p.m.</string>
+    <string name="sabTurbo">De 8:00 a.m. a 6:00 p.m.</string>
+    <string name="domTurbo">De 8:00 a.m. a 1:00 p.m.</string>
+    <string name="title_activity_prueba">Sign in</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="listaApli">
+        <item>Registro de solicitudes de material Bibliográfico</item>
+        <item>Reserva de turnos para equipos de cómputo</item>
+        <item>Suministro de documentos</item>
+    </string-array>
+
+</resources>

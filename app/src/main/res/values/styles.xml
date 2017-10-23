@@ -1,0 +1,14 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.Design.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/udeaPrimary</item>
+        <item name="colorPrimaryDark">@color/udeaPrimaryDark</item>
+        <item name="colorAccent">@color/udeaLight</item>
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+
+</resources>
