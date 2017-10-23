@@ -21,9 +21,16 @@
         </item>
 
         <item
+            android:id="@+id/item_chat"
+            android:title="@string/chat"
+            android:icon="@android:drawable/sym_action_chat">
+        </item>
+
+        <item
             android:id="@+id/item_help"
             android:title="@string/help_1"
             android:icon="@android:drawable/ic_menu_help"/>
+
 
     </group>
 

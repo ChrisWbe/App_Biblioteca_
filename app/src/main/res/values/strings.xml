@@ -2,7 +2,6 @@
     <string name="app_name">Sistema de Bibliotecas</string>
     <string name="abierto">Abierto</string>
     <string name="cerrado">Cerrado</string>
-    <string name="opcion">Selecciona una Biblioteca</string>
     <string name="dir"><b><i>Dirección: </i></b></string>
     <string name="tel"><b><i>Teléfono: </i></b></string>
     <string name="ho_ate"><b><i>Horario de atención al público </i></b></string>
@@ -14,14 +13,10 @@
     <string name="llevame">Llévame</string>
     <string name="usuario">Usuario</string>
     <string name="pass">Contraseña</string>
+    <string name="identi">Identificación</string>
     <string name="login">Entrar</string>
-    <string name="sesion"> Cerrar Sesión</string>
-    <string name="iniSesion">Iniciar Sesión</string>
     <string name="errorVacio">Este campo no puede estár vacío</string>
     <string name="conecction">Necesaria conexión a Internet</string>
-    <string name="myBooks">Mis prestamos</string>
-    <string name="myInfo">Info Usuario</string>
-    <string name="centifi">Certificados</string>
 
     <!--para el menu del NAvigationDrawer-->
     <string name="ini">Catálogo</string>
@@ -35,6 +30,7 @@
     <string name="pagSuministros">http://cirene.udea.edu.co/suministros/#/</string>
     <string name="help_1">Ayudas y sugerencias</string>
     <string name="miCuenta">Mi cuenta</string>
+    <string name="chat">Chat</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <!-- Carlos Gavíria Díaz -->

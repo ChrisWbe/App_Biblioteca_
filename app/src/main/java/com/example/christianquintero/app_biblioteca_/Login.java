@@ -87,6 +87,7 @@ public class Login extends AppCompatActivity{
                 }else if (TextUtils.isEmpty(contraseña)){
                     pass.setError(getText(R.string.errorVacio));
                     pass.requestFocus();
+
                     return;
                 }else{
 
@@ -98,7 +99,7 @@ public class Login extends AppCompatActivity{
                         JSONObject jsonObject = new JSONObject(asyncTask.get());
                         if(Boolean.valueOf(jsonObject.getBoolean("VALIDADO"))){
 
-                            saveProfile();
+                            saveProfile(jsonObject.getString("RESULTADO"));
                             Intent intent = new Intent(Login.this, Principal.class);
                             startActivity(intent);
                             overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out );
@@ -124,13 +125,14 @@ public class Login extends AppCompatActivity{
     }
 
 
-    private void saveProfile(){
+    private void saveProfile(String ident){
         String nameUser = user.getText().toString();
         String passUser = pass.getText().toString();
         SharedPreferences sharedPreferences = getSharedPreferences(nameFyle, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(getString(R.string.usuario), nameUser);
         editor.putString(getString(R.string.pass), passUser);
+        editor.putString(getString(R.string.identi), ident);
         editor.commit();
 
     }
@@ -149,6 +151,7 @@ public class Login extends AppCompatActivity{
 
         return conect;
     }
+
     public class SendPostRequest extends AsyncTask<String, Void, String>{
 
 
