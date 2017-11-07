@@ -125,51 +125,6 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         return true;
     }
 
-    /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        SharedPreferences veriPreferences = getSharedPreferences(Login.nameFyle, Context.MODE_PRIVATE);
-        if(veriPreferences.getString(getString(R.string.usuario), null) == null){
-            getMenuInflater().inflate(R.menu.menu_logeo, menu);
-            titulo.setText("Bienvenido");
-            subTitulo.setText("");
-
-        }else{
-            getMenuInflater().inflate(R.menu.menu, menu);
-            titulo.setText(veriPreferences.getString(getString(R.string.usuario), null));
-            subTitulo.setText("Ing. Electrónica");
-
-        }
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.item2:
-                Toast.makeText(this, "hola", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.item1:
-                SharedPreferences sharedPreferences = getSharedPreferences(Login.nameFyle, Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.clear();
-                editor.commit();
-                Intent intent1 = new Intent().setClass(this, Splash.class);
-                startActivity(intent1);
-                finish();
-                break;
-            case R.id.itemLog1:
-                Intent intent2 = new Intent().setClass(this, Login.class);
-                startActivity(intent2);
-                overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out );
-                finish();
-
-            default:
-                return super.onOptionsItemSelected(item);
-
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
 
 
 }

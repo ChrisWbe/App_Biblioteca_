@@ -29,8 +29,9 @@
         <item
             android:id="@+id/item_help"
             android:title="@string/help_1"
-            android:icon="@android:drawable/ic_menu_help"/>
+            android:icon="@android:drawable/ic_menu_help">
 
+        </item>
 
     </group>
 

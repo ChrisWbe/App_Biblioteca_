@@ -1,8 +1,11 @@
 package com.example.christianquintero.app_biblioteca_;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,7 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.GridLayout;
+import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import static android.R.layout.simple_list_item_1;
 
@@ -20,8 +27,8 @@ import static android.R.layout.simple_list_item_1;
  */
 public class ListaAplicaciones extends Fragment {
 
-    ListView lista;
-    ArrayAdapter<CharSequence> adapter;
+    GridView lista;
+    //ArrayAdapter<CharSequence> adapter;
 
 
     public ListaAplicaciones() {
@@ -38,8 +45,12 @@ public class ListaAplicaciones extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        lista = (ListView)view.findViewById(R.id.listApli);
-        adapter = ArrayAdapter.createFromResource(getContext(), R.array.listaApli, simple_list_item_1);
+
+        int[] imagesLista = {R.mipmap.ic_data_base,R.mipmap.ic_prestamos,R.mipmap.ic_prestamos,R.mipmap.ic_prestamos,R.mipmap.ic_computer,R.mipmap.ic_document};
+        String[] titlesLista = {getString(R.string.dataBase),getString(R.string.biblioDig),getString(R.string.inVir),getString(R.string.regbiblio),getString(R.string.reserEquipos),getString(R.string.sumDoc)};
+
+        lista = (GridView) view.findViewById(R.id.gridView);
+        MyAdapterAplication adapter = new MyAdapterAplication(getActivity(), titlesLista, imagesLista);
         lista.setAdapter(adapter);
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -77,5 +88,29 @@ public class ListaAplicaciones extends Fragment {
             }
         });
 
+    }
+
+    public class MyAdapterAplication extends ArrayAdapter{
+        int[] imgArray;
+        String[] titleArray;
+
+        public MyAdapterAplication(Context context, String[] title, int[] img) {
+            super(context, R.layout.listview_row_aplicaciones, R.id.listTitleAplica, title);
+            this.imgArray = img;
+            this.titleArray = title;
+        }
+
+        public View getView(int position,  View convertView, ViewGroup parent){
+            LayoutInflater inflater = (LayoutInflater)getActivity().getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View row = inflater.inflate(R.layout.listview_row_aplicaciones, parent, false);
+
+            ImageView imageView = (ImageView)row.findViewById(R.id.listImageAplica);
+            TextView textView = (TextView)row.findViewById(R.id.listTitleAplica);
+
+            imageView.setImageResource(imgArray[position]);
+            textView.setText(titleArray[position]);
+
+            return row;
+        }
     }
 }

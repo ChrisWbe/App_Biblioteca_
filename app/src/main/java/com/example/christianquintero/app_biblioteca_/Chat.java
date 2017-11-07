@@ -43,7 +43,7 @@ public class Chat extends Fragment {
         imageView.setVisibility(View.INVISIBLE);
         webView.setVisibility(View.VISIBLE);
 
-        String url = "https://aplicacionesbiblioteca.udea.edu.co/biblioappchat.php";
+        String url = "http://aplicacionesbiblioteca.udea.edu.co/biblioappchat.php";
         webView.loadUrl(url);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);

@@ -169,6 +169,8 @@ public class Login extends AppCompatActivity{
 
                 dato.accumulate("usuario", params[0]);
                 dato.accumulate("clave", params[1]);
+
+                System.out.println("Rn login: "+dato.toString());
                 StringEntity entity = new StringEntity(dato.toString());
                 httpPost.setEntity(entity);
 

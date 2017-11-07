@@ -1,4 +1,5 @@
 <resources>
+    <string name="appkey">UGT*Vh4e11@s</string>
     <string name="app_name">Sistema de Bibliotecas</string>
     <string name="abierto">Abierto</string>
     <string name="cerrado">Cerrado</string>
@@ -17,6 +18,11 @@
     <string name="login">Entrar</string>
     <string name="errorVacio">Este campo no puede estár vacío</string>
     <string name="conecction">Necesaria conexión a Internet</string>
+    <string name="multaNula">Felicidades, no tienes multas, sigue así</string>
+
+    <string name="hisPres">Mi historial de prestamos</string>
+    <string name="reservas">Mis reservas</string>
+    <string name="certi">Mis Certificados</string>
 
     <!--para el menu del NAvigationDrawer-->
     <string name="ini">Catálogo</string>
@@ -25,9 +31,9 @@
     <string name="pagBasesdeDatos">http://aplicacionesbiblioteca.udea.edu.co/bdm.html</string>
     <string name="pagBibliotecaDigital">http://bibliotecadigital.udea.edu.co/</string>
     <string name="pagInduccionVirtual">https://aplicacionesbiblioteca.udea.edu.co/induccionvirtual/</string>
-    <string name="pagMaterialBiblio">http://cirene.udea.edu.co/seleccion/#/</string>
+    <string name="pagMaterialBiblio">http://cirene.udea.edu.co/seleccion/#/inicioPortal</string>
     <string name="pagTurnos">http://biblioteca.udea.edu.co/turnos/#/</string>
-    <string name="pagSuministros">http://cirene.udea.edu.co/suministros/#/</string>
+    <string name="pagSuministros">http://cirene.udea.edu.co/suministros/#/registrarsolicitudPortal</string>
     <string name="help_1">Ayudas y sugerencias</string>
     <string name="miCuenta">Mi cuenta</string>
     <string name="chat">Chat</string>
@@ -409,13 +415,13 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string-array name="listaApli">
-        <item>Bases de Datos</item>
-        <item>Biblioteca Digital</item>
-        <item>Inducción Virtual</item>
-        <item>Registro de solicitudes de material Bibliográfico</item>
-        <item>Reserva de turnos para equipos de cómputo</item>
-        <item>Suministro de documentos</item>
-    </string-array>
+
+        <string name="dataBase">Bases de Datos</string>
+        <string name="biblioDig">Biblioteca Digital</string>
+        <string name="inVir">Inducción Virtual</string>
+        <string name="regbiblio">Registro de solicitudes de material Bibliográfico</string>
+        <string name="reserEquipos">Reserva de turnos para equipos de cómputo</string>
+        <string name="sumDoc">Suministro de documentos</string>
+
 
 </resources>
