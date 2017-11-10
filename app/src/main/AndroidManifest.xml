@@ -35,8 +35,9 @@
         <activity android:name=".MostrarMapas" />
         <activity android:name=".Login" />
         <activity android:name=".Bibliotecas" />
-        <activity android:name=".Principal"></activity>
-        <activity android:name=".Aplicaciones"></activity>
+        <activity android:name=".Principal" />
+        <activity android:name=".Aplicaciones" />
+        <activity android:name=".HistorialPrestamos"></activity>
     </application>
 
 </manifest>

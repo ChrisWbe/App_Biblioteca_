@@ -100,7 +100,8 @@ public class Login extends AppCompatActivity{
                         if(Boolean.valueOf(jsonObject.getBoolean("VALIDADO"))){
 
                             saveProfile(jsonObject.getString("RESULTADO"));
-                            Intent intent = new Intent(Login.this, Principal.class);
+                            Intent intent = new Intent().setClass(Login.this, Principal.class);
+                            intent.putExtra("ref",true);
                             startActivity(intent);
                             overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out );
                             finish();

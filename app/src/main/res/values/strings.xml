@@ -416,12 +416,21 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-        <string name="dataBase">Bases de Datos</string>
-        <string name="biblioDig">Biblioteca Digital</string>
-        <string name="inVir">Inducción Virtual</string>
-        <string name="regbiblio">Registro de solicitudes de material Bibliográfico</string>
-        <string name="reserEquipos">Reserva de turnos para equipos de cómputo</string>
-        <string name="sumDoc">Suministro de documentos</string>
+    <string name="dataBase">Bases de Datos</string>
+    <string name="biblioDig">Repositorio Institucional</string>
+    <string name="inVir">Inducción Virtual</string>
+    <string name="regbiblio">Recomendación de material bibliográfico</string>
+    <string name="reserEquipos">Reserva de equipos de computo</string>
+    <string name="sumDoc">Suministro de documentos</string>
+
+    <string name="SignatureHistorial">Signatura: </string>
+    <string name="tituloHistorial">Titulo: </string>
+    <string name="localHistorial">Localización: </string>
+    <string name="fec_entr">Fecha de devolución: </string>
+    <string name="multaHistorial">Multa: </string>
+
+    <string name="logOut">Cerrar Sesión</string>
+    <string name="confirm">¿Está seguro de querer cerrar Sesión?</string>
 
 
 </resources>

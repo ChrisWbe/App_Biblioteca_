@@ -1,6 +1,8 @@
 package com.example.christianquintero.app_biblioteca_;
 
+import android.content.ClipData;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -12,13 +14,18 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 import android.support.v4.app.Fragment;
+import android.widget.Toast;
+
+import java.security.acl.Group;
 
 
 public class Principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -27,7 +34,8 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
     public ViewPager viewPager;
     public Drawable drawable;
     public TextView titulo, subTitulo;
-
+    public Group grupo;
+    public MenuItem item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +47,19 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
+        Bundle bundle = getIntent().getExtras();
+        Fragment fragmentInicial;
 
-        Fragment fragmentInicial = new Inicio();
+
+        if(bundle.getBoolean("ref")){
+           fragmentInicial = new DetallesUser();
+
+        }else{
+            fragmentInicial = new Inicio();
+        }
+
+
+
         getSupportFragmentManager().beginTransaction().replace(R.id.fragments_content, fragmentInicial).commit();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -57,12 +76,17 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         subTitulo = (TextView)hView.findViewById(R.id.headerSubTitulo);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Menu menu = navigationView.getMenu();
+        item = menu.findItem(R.id.item_logout);
+
         SharedPreferences titShared = getSharedPreferences(Login.nameFyle, Context.MODE_PRIVATE);
         if(titShared.getString("Usuario", null)==null){
             titulo.setText("Bienvenido");
+            item.setVisible(false);
         }else{
             titulo.setText(titShared.getString("Usuario", null));
             subTitulo.setText("Hola");
+            item.setVisible(true);
         }
     }
 
@@ -112,6 +136,32 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
                 fragmentTransaction = true;
 
             case R.id.item_help:
+                break;
+
+            case R.id.item_logout:
+                AlertDialog.Builder builder  = new AlertDialog.Builder(this);
+                builder.setCancelable(false);
+                builder.setTitle(getString(R.string.logOut));
+                builder.setMessage(getString(R.string.confirm));
+                builder.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences sharedPreferences = getSharedPreferences(Login.nameFyle, Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.clear();
+                        editor.commit();
+                        Intent intent = new Intent().setClass(getBaseContext(), Splash.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }).setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+                builder.create().show();
                 break;
 
         }

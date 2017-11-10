@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"
+        android:id="@+id/grupo_items">
         <item
             android:id="@+id/item_Inicio"
             android:icon="@android:drawable/ic_menu_add"
@@ -33,7 +34,16 @@
 
         </item>
 
+        <item
+            android:id="@+id/item_logout"
+            android:title="@string/logOut"
+            android:icon="@android:drawable/ic_lock_power_off">
+
+        </item>
+
     </group>
+
+
 
 
 

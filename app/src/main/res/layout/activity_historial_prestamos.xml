@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.christianquintero.app_biblioteca_.HistorialPrestamos">
+
+    <include
+        android:id="@+id/toolbar_historial_prestamos"
+        layout="@layout/tool_bar"
+        ></include>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listHistorialPrestamos"
+        android:divider="@color/udeaLight"
+        android:dividerHeight="1.5dp"></ListView>
+
+</LinearLayout>

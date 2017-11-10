@@ -37,6 +37,7 @@ public class Splash extends AppCompatActivity {
 
             //Toast.makeText(this, sharedPreferences.getString(getString(R.string.pass), "No está"), Toast.LENGTH_LONG).show();
             Intent intent = new Intent().setClass(Splash.this, Principal.class);
+            intent.putExtra("ref", false);
             startActivity(intent);
             finish();
 

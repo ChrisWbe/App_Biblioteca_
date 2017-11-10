@@ -2,6 +2,7 @@ package com.example.christianquintero.app_biblioteca_;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -15,6 +16,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -43,7 +45,6 @@ import java.util.concurrent.ExecutionException;
 public class DetallesUser extends Fragment {
 
     public TextView detailsName, detailsEmail, detailsIdent, detailsmulta;
-    public ImageView detailsImg;
     public ListView lv;
 
 
@@ -62,20 +63,20 @@ public class DetallesUser extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        String[] titlesList = {getString(R.string.hisPres), getString(R.string.reservas), getString(R.string.certi)};
-        String[] des = {"Descripcion 1", "Descripcion 2", "Descripcion 3"};
-        int[] image = {R.mipmap.ic_prestamos, R.mipmap.ic_reservas, R.mipmap.ic_certificados};
+        String[] titlesList = {"",getString(R.string.hisPres), getString(R.string.reservas), getString(R.string.certi)};
+        int[] image = {0 ,R.mipmap.ic_prestamos, R.mipmap.ic_reservas, R.mipmap.ic_certificados};
 
         detailsName = (TextView)view.findViewById(R.id.details_name);
         detailsEmail = (TextView)view.findViewById(R.id.details_email);
         detailsIdent = (TextView)view.findViewById(R.id.details_ident);
         detailsmulta = (TextView)view.findViewById(R.id.details_multa);
-        detailsImg = (ImageView)view.findViewById(R.id.imageDetailsUser);
 
         lv = (ListView)view.findViewById(R.id.listLista);
 
-        MyAdapter adapter = new MyAdapter(getActivity(), titlesList, des, image);
+        MyAdapter adapter = new MyAdapter(getActivity(), titlesList, image);
         lv.setAdapter(adapter);
+
+
 
 
 
@@ -83,7 +84,7 @@ public class DetallesUser extends Fragment {
         asyncTask = new SendPostRequest();
 
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(Login.nameFyle, Context.MODE_PRIVATE);
-        String documento = sharedPreferences.getString(getString(R.string.identi), null);
+        final String documento = sharedPreferences.getString(getString(R.string.identi), null);
 
         asyncTask.execute(documento, getString(R.string.appkey));
         try {
@@ -100,7 +101,6 @@ public class DetallesUser extends Fragment {
 
             if(Integer.valueOf(jsonObject.getString("multa_actual")) == 0){
                 detailsmulta.setText(getString(R.string.multaNula));
-                detailsImg.setImageResource(R.mipmap.ic_like);
             }else{
                 detailsmulta.setText(jsonObject.getString("multa_actual"));
             }
@@ -114,6 +114,27 @@ public class DetallesUser extends Fragment {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent();
+                switch(position){
+                    case 1:
+                        intent.putExtra("doc", documento);
+                        intent.setClass(getActivity().getBaseContext(), HistorialPrestamos.class);
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+
+                }
+
+                startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.left_in, R.anim.left_out);
+            }
+        });
 
     }
 
@@ -160,13 +181,11 @@ public class DetallesUser extends Fragment {
     public class MyAdapter extends ArrayAdapter{
         int[] imagenArray;
         String[] titleArray;
-        String[] descriptionArray;
 
-        public MyAdapter(Context context, String[] titles1, String[] description1, int[] img1) {
+        public MyAdapter(Context context, String[] titles1, int[] img1) {
             super(context, R.layout.listview_row, R.id.listTitle, titles1);
             this.imagenArray = img1;
             this.titleArray = titles1;
-            this.descriptionArray = description1;
         }
 
         public View getView(int position,  View convertView, ViewGroup parent){
@@ -175,11 +194,9 @@ public class DetallesUser extends Fragment {
 
             ImageView myImage = (ImageView) row.findViewById(R.id.listIMage);
             TextView myTitle = (TextView)row.findViewById(R.id.listTitle);
-            TextView myDesc = (TextView)row.findViewById(R.id.listDescription);
 
             myImage.setImageResource(imagenArray[position]);
             myTitle.setText(titleArray[position]);
-            myDesc.setText(descriptionArray[position]);
 
 
             return row;
