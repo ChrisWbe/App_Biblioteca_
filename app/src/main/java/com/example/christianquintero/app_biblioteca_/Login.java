@@ -1,9 +1,11 @@
 package com.example.christianquintero.app_biblioteca_;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -14,6 +16,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -62,6 +65,7 @@ public class Login extends AppCompatActivity{
 
 
         buttonLog.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
 
@@ -92,7 +96,7 @@ public class Login extends AppCompatActivity{
                 }else{
 
                     AsyncTask<String, Void, String> asyncTask;
-                    asyncTask = new SendPostRequest();
+                    asyncTask = new SendPostRequestLogin();
                     asyncTask.execute(user.getText().toString(), pass.getText().toString());
                     try {
 
@@ -153,8 +157,16 @@ public class Login extends AppCompatActivity{
         return conect;
     }
 
-    public class SendPostRequest extends AsyncTask<String, Void, String>{
+    public class SendPostRequestLogin extends AsyncTask<String, Void, String>{
 
+        private ProgressDialog progresoLogin;
+
+        protected void onPreExecute(){
+            progresoLogin = new ProgressDialog(Login.this);
+            progresoLogin.setMessage("Cargando ...");
+            progresoLogin.setCancelable(false);
+            progresoLogin.show();
+        }
 
         @Override
         protected  String doInBackground(String... params) {
@@ -190,7 +202,13 @@ public class Login extends AppCompatActivity{
             }
             return null;
         }
+
+        protected void onPostExecute(String result){
+            progresoLogin.dismiss();
+        }
     }
+
+
 }
 
 

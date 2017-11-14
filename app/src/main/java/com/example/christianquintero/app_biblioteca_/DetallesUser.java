@@ -1,6 +1,7 @@
 package com.example.christianquintero.app_biblioteca_;
 
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -140,6 +141,17 @@ public class DetallesUser extends Fragment {
 
     public class SendPostRequest extends AsyncTask<String, Void, String>{
 
+        private ProgressDialog progresoDetalles;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progresoDetalles = new ProgressDialog(getActivity());
+            progresoDetalles.setMessage("Cargando...");
+            progresoDetalles.setCancelable(false);
+            progresoDetalles.show();
+        }
+
         @Override
         protected String doInBackground(String... params) {
             try {
@@ -175,6 +187,12 @@ public class DetallesUser extends Fragment {
 
             return null;
 
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            progresoDetalles.dismiss();
         }
     }
 

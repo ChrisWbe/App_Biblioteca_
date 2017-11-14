@@ -1,6 +1,10 @@
 package com.example.christianquintero.app_biblioteca_;
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.support.annotation.LayoutRes;
@@ -31,8 +35,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -75,7 +84,7 @@ public class HistorialPrestamos extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         setDocument(bundle.getString("doc"));
 
-        AsyncTask<String, Void, String> asyncTask;
+        SendPostRequest asyncTask;
         asyncTask = new SendPostRequest();
 
         asyncTask.execute(getDocument(), getString(R.string.appkey));
@@ -90,24 +99,27 @@ public class HistorialPrestamos extends AppCompatActivity {
                 Toast.makeText(getBaseContext() ,"No tienes prestamos en el momento", Toast.LENGTH_LONG).show();
 
             }else{
-                int[] imagenes = new int[getNumero_prestamos()];
+                Bitmap[] imagenes = new Bitmap[getNumero_prestamos()];
                 String[] signature = new String[getNumero_prestamos()];
                 String[] titles = new String[getNumero_prestamos()];
                 String[] localizaciones = new String[getNumero_prestamos()];
                 String[] devoluciones = new String[getNumero_prestamos()];
                 String[] multas = new String[getNumero_prestamos()];
 
+                DownLoadFilesTask downLoadImages;
+
                 for(int i = 0; i<getNumero_prestamos(); i++){
                     jsonObject = jsonArray.getJSONObject(i);
-                    System.out.println("Array length: "+jsonArray.getJSONObject(i));
-
-                    imagenes[i] = android.R.drawable.ic_input_get;
                     signature[i] = jsonObject.getString("signatura");
                     titles[i] = jsonObject.getString("titulo");
                     localizaciones[i] = jsonObject.getString("localizacion");
                     devoluciones[i] = jsonObject.getString("fecha_devolucion");
                     multas[i] = jsonObject.getString("multa");
-                    System.out.println("Url: "+jsonObject.getString("image_url"));
+
+                    downLoadImages = new DownLoadFilesTask();
+                    downLoadImages.execute(jsonObject.getString("image_url"));
+
+                    imagenes[i] = downLoadImages.get();
 
                 }
 
@@ -126,11 +138,25 @@ public class HistorialPrestamos extends AppCompatActivity {
 
     }
 
-    public class SendPostRequest extends AsyncTask<String, Void, String>{
+    public class SendPostRequest extends AsyncTask<String, Integer, String>{
+        private ProgressDialog progresoHis;
+
+        @Override
+        protected void onPreExecute() {
+            progresoHis = new ProgressDialog(HistorialPrestamos.this);
+            progresoHis.setMessage("Procesando...");
+            progresoHis.setCancelable(false);
+            progresoHis.setProgress(0);
+            progresoHis.setMax(100);
+            progresoHis.show();
+        }
 
         @Override
         protected String doInBackground(String... params) {
             try {
+                for(int i = 0; i<10; i++){
+                    publishProgress(i*10);
+                }
                 HttpClient httpClient = new DefaultHttpClient();
                 HttpPost httpPost = new HttpPost("http://cirene.udea.edu.co/services_OLIB/APP_ConsultarPrestados.php");
 
@@ -163,17 +189,59 @@ public class HistorialPrestamos extends AppCompatActivity {
 
             return null;
         }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            int progreso = values[0].intValue();
+
+            progresoHis.setProgress(progreso);
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            progresoHis.dismiss();
+        }
     }
 
+    private class DownLoadFilesTask extends AsyncTask<String, Void, Bitmap>{
+        Bitmap bm = null;
+
+        @Override
+        protected void onPreExecute() {
+        }
+
+        @Override
+        protected Bitmap doInBackground(String... params) {
+            try {
+                URL urlImage = new URL(params[0]);
+                URLConnection con = urlImage.openConnection();
+                con.connect();
+                InputStream is = con.getInputStream();
+                BufferedInputStream bis = new BufferedInputStream(is);
+                bm = BitmapFactory.decodeStream(bis);
+                bis.close();
+                is.close();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+
+                e.printStackTrace();
+            }
+            return bm;
+        }
+
+    }
+
+
     public class MyAdapter extends ArrayAdapter{
-        int[] imageArray;
+        Bitmap[] imageArray;
         String[] signatureArray;
         String[] titleArray;
         String[] localizacionArray;
         String[] devolucionArray;
         String[] multaArray;
 
-        public MyAdapter(Context context, int[] img, String[] signature, String[] title, String[] local, String[] dev, String[] multa) {
+        public MyAdapter(Context context, Bitmap[] img, String[] signature, String[] title, String[] local, String[] dev, String[] multa) {
             super(context, R.layout.list_view_row_historial_prestamos, R.id.titleHistori, title);
             this.imageArray = img;
             this.signatureArray = signature;
@@ -194,12 +262,19 @@ public class HistorialPrestamos extends AppCompatActivity {
             TextView textViewDev = (TextView)row.findViewById(R.id.devolucionHistori);
             TextView textViewMulta = (TextView)row.findViewById(R.id.multaHistori);
 
-            imageView.setImageResource(imageArray[position]);
+            imageView.setImageBitmap(imageArray[position]);
             textViewSignature.setText(signatureArray[position]);
             textViewTitle.setText(titleArray[position]);
             textViewLocal.setText(localizacionArray[position]);
             textViewDev.setText(devolucionArray[position]);
-            textViewMulta.setText(multaArray[position]);
+            if(Integer.valueOf(multaArray[position]) == 0){
+                TextView tituloMulta = (TextView)row.findViewById(R.id.tituloMultaHistori);
+                tituloMulta.setVisibility(View.GONE);
+                textViewMulta.setVisibility(View.GONE);
+            }else{
+                textViewMulta.setText(multaArray[position]);
+            }
+
 
             return row;
         }

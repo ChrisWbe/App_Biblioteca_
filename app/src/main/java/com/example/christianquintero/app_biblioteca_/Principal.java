@@ -123,6 +123,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
                     finish();
 
                 }else{
+
                     getSupportActionBar().setTitle(getString(R.string.miCuenta));
                     fragment = new DetallesUser();
                     fragmentTransaction = true;
